@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000000;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.garage {
+  text-align: center;
+  width: 80%;
+  max-width: 1000px;
+}
+
+header h1 {
+  font-family: 'roboto';
+  font-size: 2.5rem;
+  color: #8456bc;
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+}
+header p {
+  font-family: 'Bungee';
+  font-size: 250%;
+  color: #717649;
+  margin-bottom: 2rem;
+}
+
+.car-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.car-img {
+  max-width: 50%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgb(255, 153, 0);
+  transition: transform 0.3s ease;
+}
+.car-img:hover {
+  transform: scale(1.05);
+
+}
+
+.controls button {
+  background: black;
+  border: none;
+  color: antiquewhite;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 14px 30px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgb(0, 200, 255);
+}
+
+#fire-effect {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 160px;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+#fire-effect.active {
+  opacity: 1;
+}
+
+.fire-flame {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  width: auto;
+  pointer-events: none;
+  animation: fire-up 2s linear forwards;
+  filter: drop-shadow(0 0 40px #ff4500aa);
+}
+
+@keyframes fire-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+    filter: drop-shadow(0 0 60px #ff4500ff);
+  }
+  100% {
+    transform: translateY(-40px) scale(1.1);
+    opacity: 0;
+    filter: drop-shadow(0 0 20px #ff4500aa);
+  }
+}
